@@ -8,7 +8,10 @@ def run():
     sub_parsers = parser.add_subparsers()
 
     server_parser = sub_parsers.add_parser("server", help="Start a messenger server")
-    server_parser.add_argument("--workers", help="amount of workers ", type=str)
+    server_parser.add_argument("--workers", help="amount of workers ", type=int,
+                               default=2)
+    server_parser.add_argument("--port", help="service port", type=int,
+                               default=50051)
     server_parser.set_defaults(func=server.run)
 
     client_parser = sub_parsers.add_parser("client", help="Start a messenger client")
