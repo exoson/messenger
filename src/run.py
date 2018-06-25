@@ -1,10 +1,9 @@
 import argparse
-from src import server, client
+import server, client
 
 
 def run():
     parser = argparse.ArgumentParser(description="Start messenger server or client")
-    parser.add_argument("mode", choices=["server", "client"])
     sub_parsers = parser.add_subparsers()
 
     server_parser = sub_parsers.add_parser("server", help="Start a messenger server")
@@ -19,6 +18,7 @@ def run():
     client_parser.set_defaults(func=client.run)
 
     args = parser.parse_args()
+    print(args)
     args.func(args)
 
 if __name__ == "__main__":
