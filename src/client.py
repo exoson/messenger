@@ -1,4 +1,4 @@
 
-def run():
-    pass
+def run(args):
+    print("client")
 
