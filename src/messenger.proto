@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+service MessengerService {
+  rpc Send(ChatMessage) returns (Response);
+  rpc Recieve(RecieveRequest) returns (stream ChatMessage);
+  rpc Login(LoginRequest) returns (Response);
+  rpc Logout(LogoutRequest) returns (Response);
+}
+
+message ChatMessage {
+  string msg = 1;
+  string reciever = 2;
+  string sender = 3;
+  string session_id = 4;
+}
+
+message RecieveRequest {
+  string user_id = 1;
+  string session_id = 2;
+}
+
+message Response {
+  string msg = 1;
+}
+
+message LoginRequest {
+  string user_id = 1;
+}
+
+message LogoutRequest {
+  string user_id = 2;
+}
