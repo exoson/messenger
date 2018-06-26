@@ -2,7 +2,8 @@ import grpc
 from concurrent import futures
 import time
 
-import messenger_pb2, messenger_pb2_grpc
+import messenger_pb2_grpc
+import messenger_pb2 as api
 
 
 class MessengerServicer(messenger_pb2_grpc.MessengerServiceServicer):
@@ -15,7 +16,7 @@ class MessengerServicer(messenger_pb2_grpc.MessengerServiceServicer):
 
     def Login(self, request, context):
         print("Logged in")
-        return messenger_pb2.Response(msg="Shieeet")
+        return api.Response(msg="Shieeet")
 
     def Logout(self, request, context):
         pass
