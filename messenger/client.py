@@ -38,7 +38,8 @@ class ClientHandler():
 
     def logout(self, args):
         """Logout from server"""
-        pass
+           self.stub.Logout(api.LogoutRequest(user_id=self.user_id))
+		
 
     def recieve_msgs(self):
         """Recieve messages from server"""
