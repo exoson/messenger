@@ -15,11 +15,11 @@ class MessengerServicer(messenger_pb2_grpc.MessengerServiceServicer):
         pass
 
     def Login(self, request, context):
-        print("Logged in")
+        print("Logged in", flush=True)
         return api.Response(msg="Shieeet")
 
     def Logout(self, request, context):
-        print("Logged out")
+        print("Logged out", flush=True)
         return api.Response(msg="Shaiiit")
 
 
