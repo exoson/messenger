@@ -56,7 +56,10 @@ class ClientHandler():
 
     def send_msg(self, args):
         """Send message to server"""
-        pass
+        
+        response = self.stub.Send(api.ChatMessage(msg=args, sender=self.user_id, session_id=self.session_id )).msg
+        print(response)
+        
 
 
 def run(args):
