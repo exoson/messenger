@@ -37,9 +37,15 @@ class ClientHandler():
             print("Already logged in.")
 
     def logout(self, args):
-        """Logout from server"""
-        self.stub.Logout(api.LogoutRequest(user_id=self.user_id))
-
+        """Logout from server"""     
+        if self.session_id is not None:
+            self.stub.Logout(api.LogoutRequest(user_id=self.user_id))
+            self.session_id = None
+          
+        else:
+            print("Already not logged in.")
+           
+        
 
     def recieve_msgs(self):
         """Recieve messages from server"""
