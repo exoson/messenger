@@ -19,7 +19,8 @@ class MessengerServicer(messenger_pb2_grpc.MessengerServiceServicer):
         return api.Response(msg="Shieeet")
 
     def Logout(self, request, context):
-        pass
+        print("Logged out")
+        return api.Response(msg="Shaiiit")
 
 
 def run(args):
